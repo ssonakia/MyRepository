@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+div.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; 
+  border: 1px solid black;
+  
+}
+div.row {
+    border: 1px solid black;
+   
+}
+
+
+</style>
+<script type="text/javascript">
+     var click=0;
+    function ExposeList() {
+      
+        var x = document.getElementById("ScrollCB");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+    }
+     </script>
+
+</head>
+<body>
+
+
+
+<h2>Four Equal Columns</h2>
+
+<div class="row">
+  <div class="column" >
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+    <div style="width:200px;overflow:auto;border:1px solid black;" onclick="ExposeList()" >
+            <label id="cbChoices" >Show Choices</label><br>
+    </div>
+    
+    <!-- <select id="cbChoices" onclick="ExposeList()"> -->
+    <div id="ScrollCB" style="width:200px;overflow:auto;border:1px solid black;display:none">
+            <input type="checkbox" id="scb1" name="scb1" value="1">As Seen On Tv<br>
+            <input type="checkbox" id="scb2" name="scb2" value="2">Back To Basics<br>
+            <input type="checkbox" id="scb3" name="scb3" value="3">Bed Bath &amp; Beyond<br>
+            <input type="checkbox" id="scb4" name="scb4" value="4">Black and Decker<br>
+            <input type="checkbox" id="scb5" name="scb5" value="5">Borch<br>
+            <input type="checkbox" id="scb6" name="scb6" value="6">Culsinart<br>
+            
+            </div>
+        </select>
+  </div>
+  <div class="column" >
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+  
+</div>
+<div class="row">
+<div class="column" >
+    <h2>Column 3</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column" >
+    <h2>Column 4</h2>
+    <p>Some text..</p>
+  </div>
+</div>
+
+</body>
+</html>
