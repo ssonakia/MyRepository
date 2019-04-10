@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+div.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; 
+  border: 1px solid black;
+  
+}
+div.row {
+    border: 1px solid black;
+   
+}
+
+
+</style>
+<script type="text/javascript">
+     var click=0;
+    function ExposeList() {
+      
+        var x = document.getElementById("ScrollCB");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+    }
+
+    
+     </script>
+     <script type="text/javascript">
+			function printChecked(){
+				var items=document.getElementsByName('scb');
+				var selectedItems="";
+				for(var i=0; i<items.length; i++){
+					if(items[i].type=='checkbox' && items[i].checked==true)
+						selectedItems+=items[i].value+"\n";
+				}
+				document.getElementById('display').value=(selectedItems);
+			}			
+		</script>
+
+</head>
+<body>
+
+
+
+<h2>Four Equal Columns</h2>
+
+<div class="row">
+  <div class="column" >
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+    <div style="width:200px;overflow:auto;border:1px solid black;" onclick="ExposeList()" >
+            <label id="cbChoices" >Show Choices</label><br>
+    </div>
+    
+    <!-- <select id="cbChoices" onclick="ExposeList()"> -->
+    <div id="ScrollCB" style="width:200px;overflow:auto;border:1px solid black;display:none" onclick="printChecked()">
+            <input type="checkbox" id="scb1" name="scb" value="As Seen On Tv">As Seen On Tv<br>
+            <input type="checkbox" id="scb2" name="scb" value="Back To Basics">Back To Basics<br>
+            <input type="checkbox" id="scb3" name="scb" value="Bed Bath &amp; Beyond">Bed Bath &amp; Beyond<br>
+            <input type="checkbox" id="scb4" name="scb" value="Black and Decker">Black and Decker<br>
+            <input type="checkbox" id="scb5" name="scb" value="Borch">Borch<br>
+            <input type="checkbox" id="scb6" name="scb" value="Culsinart">Culsinart<br>
+            
+    </div>
+        
+  </div>
+  <div class="column" >
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+    <textarea name='display' id='display' placeholder="Select Items from Select List." rows=7 cols="20">
+
+    </textarea>
+  </div>
+  
+</div>
+<div class="row">
+<div class="column" >
+    <h2>Column 3</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column" >
+    <h2>Column 4</h2>
+    <p>Some text..</p>
+  </div>
+</div>
+
+</body>
+</html>
